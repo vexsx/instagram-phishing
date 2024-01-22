@@ -13,7 +13,12 @@ func saveCredentials(username, password string) {
 		fmt.Println("Error opening file:", err)
 		return
 	}
-	defer file.Close()
+	defer func(file *os.File) {
+		err := file.Close()
+		if err != nil {
+
+		}
+	}(file)
 
 	// Write the username and password to the file
 	data := fmt.Sprintf("Username: %s\nPassword: %s\n\n", username, password)

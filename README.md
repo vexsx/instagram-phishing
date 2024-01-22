@@ -10,7 +10,7 @@ You are solely responsible for your actions, that's obviously not me.**<br/>
 
 ## 🚀 Getting started
 
-* Get the source [code](https://github.com/Abhijeetbyte/insta-login/archive/refs/heads/main.zip)
+* Get the source [code](https://github.com/vexsx/instagram-phishing)
 
 * Extract the zip and uploade the website on your hosting server
   - Here i am using **000webhost.com** it's free and allow sending emails too.
