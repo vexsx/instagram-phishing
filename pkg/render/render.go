@@ -4,10 +4,15 @@ import (
 	"bytes"
 	"html/template"
 	"insta/pkg/config"
+	"insta/pkg/models"
 	"log"
 	"net/http"
 	"path/filepath"
 )
+
+func AddDefaultData(td *models.TemplateData) *models.TemplateData {
+	return td
+}
 
 var app *config.AppConfig
 
@@ -34,6 +39,8 @@ func RenderTemplate(w http.ResponseWriter, tpml string) {
 
 	// store result in a buffer and double-check if it is a valid value
 	buf := new(bytes.Buffer)
+
+	//td = AddDefaultData(td)
 
 	err := t.Execute(buf, nil)
 	if err != nil {
