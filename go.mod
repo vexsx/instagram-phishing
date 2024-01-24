@@ -1,6 +1,6 @@
 module insta
 
-go 1.21.1
+go 1.21.6
 
 require (
 	github.com/alessio/shellescape v1.4.1 // indirect

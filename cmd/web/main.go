@@ -6,10 +6,13 @@ import (
 	"net/http"
 )
 
+// change port here
 const portNumber = ":8080"
 
 func main() {
-	http.HandleFunc("/", handler.LoginHandler)
+	fs := http.FileServer(http.Dir("static"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
+	http.HandleFunc("/", handler.Index)
 	fmt.Println(fmt.Sprintf("Starting application on port %s", portNumber))
 	_ = http.ListenAndServe(portNumber, nil)
 }

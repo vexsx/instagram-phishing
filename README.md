@@ -15,18 +15,18 @@ You are solely responsible for your actions, that's obviously not me.**<br/>
 * Extract the zip and uploade the website on your hosting server
   - Here i am using **000webhost.com** it's free and allow sending emails too.
 
-![img](images/email-check.png)
+![img](static/images/email-check.png)
 
 * Change receiving email address</br>
 
-  - ![img](images/email-php_LI.jpg)
+  - ![img](static/images/email-php_LI.jpg)
 </br>
 
 ### Webpage 
-![Webpage](images/webpage-preview.png)
+![Webpage](static/images/webpage-preview.png)
 
 </br>
 
 * As soon as someone enter **username** & **password** and click on **Log In** button, you will receive an email</br>
 
-  - ![img](images/received-email.png)
+  - ![img](static/images/received-email.png)

