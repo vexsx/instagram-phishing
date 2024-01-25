@@ -1,7 +1,5 @@
 github.com/alessio/shellescape v1.4.1 h1:V7yhSDDn8LP4lc4jS8pFkt0zCnzVJlG5JXy9BVKJUX0=
 github.com/alessio/shellescape v1.4.1/go.mod h1:PZAiSCk0LJaZkiCSkPv8qIobYglO3FPpyFjDCtHLS30=
-github.com/bmizerany/pat v0.0.0-20210406213842-e4b6760bdd6f h1:gOO/tNZMjjvTKZWpY7YnXC72ULNLErRtp94LountVE8=
-github.com/bmizerany/pat v0.0.0-20210406213842-e4b6760bdd6f/go.mod h1:8rLXio+WjiTceGBHIoTvn60HIbs7Hm7bcHjyrSqYB9c=
 github.com/tawesoft/golib/v2 v2.10.0 h1:uvA5Cy+UV6NHrf3Qwg1+2Uvz6eKVW1t+KrJ9gZYSjag=
 github.com/tawesoft/golib/v2 v2.10.0/go.mod h1:jGw0nDuOLpji2TW5QfSQLcWnZ4WtS4TizzRuXu3hZ/Y=
 golang.org/x/exp v0.0.0-20221208152030-732eee02a75a h1:4iLhBPcpqFmylhnkbY3W0ONLUYYkDAW9xMFLfxgsvCw=
