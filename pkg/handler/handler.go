@@ -1,8 +1,6 @@
 package handler
 
 import (
-	"crypto/rand"
-	"encoding/base64"
 	"insta/pkg/config"
 	"insta/pkg/render"
 	"net/http"
@@ -13,39 +11,23 @@ type Repository struct {
 	App *config.AppConfig
 }
 
+// Repo the repository used by the handlers
+var Repo *Repository
+
+// NewRepo creates a new repository
 func NewRepo(a *config.AppConfig) *Repository {
 	return &Repository{
 		App: a,
 	}
 }
 
-// Repo the repository used by the handlers
-var Repo *Repository
-
 // NewHandlers sets the repository for the handlers
 func NewHandlers(r *Repository) {
 	Repo = r
 }
 
-func (m *Repository) Index(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("X-CSRF-Token", generateCSRFToken())
-	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	w.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate")
-	w.Header().Set("Pragma", "no-cache")
-	w.Header().Set("Expires", "0")
+func Index(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, "index.html")
-
-}
-
-func generateCSRFToken() string {
-	// Generate a random byte slice with 32 bytes
-	token := make([]byte, 32)
-	rand.Read(token)
-
-	// Encode the byte slice as a base64 string
-	tokenString := base64.URLEncoding.EncodeToString(token)
-
-	return tokenString
 }
 
 //r.ParseForm()

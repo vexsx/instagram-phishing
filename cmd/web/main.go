@@ -21,7 +21,6 @@ func main() {
 	}
 
 	app.TemplateCache = tc
-	//activate caching???
 	app.UseCache = false
 
 	repo := handler.NewRepo(&app)
@@ -31,13 +30,7 @@ func main() {
 
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
+	http.HandleFunc("/", handler.Index)
 	fmt.Println(fmt.Sprintf("Starting application on port %s", portNumber))
-	srv := http.Server{
-		Addr:    portNumber,
-		Handler: routes(&app),
-	}
-	err = srv.ListenAndServe()
-	if err != nil {
-		log.Fatalln(err)
-	}
+	_ = http.ListenAndServe(portNumber, nil)
 }
