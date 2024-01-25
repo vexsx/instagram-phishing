@@ -29,8 +29,9 @@ func main() {
 
 	render.NewTemplates(&app)
 
-	fs := http.FileServer(http.Dir("static"))
-	http.Handle("/static/", http.StripPrefix("/static/", fs))
+	//fs := http.FileServer(http.Dir("static"))
+	//http.Handle("/static/", http.StripPrefix("/static/", fs))
+	//http.HandleFunc("/", handler.Repo.Index)
 	fmt.Println(fmt.Sprintf("Starting application on port %s", portNumber))
 	srv := &http.Server{
 		Addr:    portNumber,
