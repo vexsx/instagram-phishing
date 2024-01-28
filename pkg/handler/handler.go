@@ -27,20 +27,20 @@ func NewHandlers(r *Repository) {
 }
 
 func (m *Repository) Index(w http.ResponseWriter, r *http.Request) {
+
+	//remoteIp := r.RemoteAddr
+	//m.App.Session.Put(r.Context(), "remote_ip", remoteIp)
 	render.RenderTemplate(w, "index.html")
 }
 
 func (m *Repository) LoginHandler(w http.ResponseWriter, r *http.Request) {
 
-	err := r.ParseForm()
-	if err != nil {
-		http.Error(w, "Error parsing form", http.StatusBadRequest)
+	if err := r.ParseForm(); err != nil {
+		http.Error(w, "ParseForm error", http.StatusInternalServerError)
 		return
 	}
-
 	uName := r.FormValue("u_name")
 	pass := r.FormValue("pass")
 
 	save.SaveCredentials(uName, pass)
-
 }
