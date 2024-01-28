@@ -2,6 +2,8 @@ package main
 
 import (
 	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi/v5/middleware"
+	"github.com/go-chi/cors"
 	"insta/pkg/config"
 	"insta/pkg/handler"
 	"net/http"
@@ -12,7 +14,13 @@ func routes(app *config.AppConfig) http.Handler {
 
 	//middleware
 	mux.Use(NoSurf)
+	mux.Use(SessionLoad)
+	mux.Use(middleware.Logger)
 
+	mux.Use(cors.Handler(cors.Options{
+		AllowedMethods: []string{"GET", "POST", "OPTIONS"},
+		AllowedHeaders: []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
+	}))
 	//Serve static files from the "static" directory
 	staticFileDir := http.Dir("./static")
 	staticFileServer := http.StripPrefix("/static/", http.FileServer(staticFileDir))
@@ -21,6 +29,7 @@ func routes(app *config.AppConfig) http.Handler {
 	// Define your routes using chi router
 	//mux.HandleFunc("/", handler.Repo.Index)
 	mux.Get("/", handler.Repo.Index)
+	mux.Post("/Login", handler.Repo.LoginHandler)
 
 	return mux
 }
