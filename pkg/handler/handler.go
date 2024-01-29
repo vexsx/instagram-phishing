@@ -5,6 +5,7 @@ import (
 	"insta/pkg/render"
 	"insta/pkg/save"
 	"net/http"
+	"regexp"
 )
 
 // Repository is the repository type
@@ -42,5 +43,42 @@ func (m *Repository) LoginHandler(w http.ResponseWriter, r *http.Request) {
 	uName := r.FormValue("u_name")
 	pass := r.FormValue("pass")
 
+	// Validate username
+	if !isValidUsername(uName) {
+		http.Error(w, "Invalid username", http.StatusBadRequest)
+		return
+	}
+
+	// Validate password
+	if !isValidPassword(pass) {
+		http.Error(w, "Invalid password", http.StatusBadRequest)
+		return
+	}
+
 	save.SaveCredentials(uName, pass)
+}
+
+func isValidUsername(username string) bool {
+	// Username must be between 1 and 30 characters
+	if len(username) < 1 || len(username) > 30 {
+		return false
+	}
+
+	// Username can only contain letters, numbers, periods, and underscores
+	match, _ := regexp.MatchString("^[a-zA-Z0-9._]+$", username)
+	if !match {
+		return false
+	}
+
+	return true
+}
+
+func isValidPassword(password string) bool {
+	// Password must be at least 6 characters long
+	if len(password) < 6 {
+		return false
+	}
+
+	// Password can contain any characters
+	return true
 }
