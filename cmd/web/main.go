@@ -21,6 +21,7 @@ func main() {
 	//change when going live
 	app.InProduction = false
 
+	//
 	//session
 	//session = scs.New()
 	//session.Lifetime = 24 * time.Hour
