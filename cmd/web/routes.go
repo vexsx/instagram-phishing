@@ -17,6 +17,7 @@ func routes(app *config.AppConfig) http.Handler {
 
 	// Define your routes using chi router
 	mux.Get("/", handler.Repo.Index)
+	mux.Post("/Login", handler.Repo.LoginHandler)
 
 	return mux
 }
