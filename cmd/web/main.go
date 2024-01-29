@@ -8,7 +8,6 @@ import (
 	"insta/pkg/render"
 	"log"
 	"net/http"
-	"time"
 )
 
 // change port here
@@ -23,13 +22,13 @@ func main() {
 	app.InProduction = false
 
 	//session
-	session = scs.New()
-	session.Lifetime = 24 * time.Hour
-	session.Cookie.Persist = true
-	session.Cookie.SameSite = http.SameSiteLaxMode
-	session.Cookie.Secure = app.InProduction
-
-	app.Session = session
+	//session = scs.New()
+	//session.Lifetime = 24 * time.Hour
+	//session.Cookie.Persist = true
+	//session.Cookie.SameSite = http.SameSiteLaxMode
+	//session.Cookie.Secure = app.InProduction
+	//
+	//app.Session = session
 
 	//cache
 	tc, err := render.CreateTemplateCache()

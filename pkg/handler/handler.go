@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"html/template"
 	"insta/pkg/config"
 	"insta/pkg/render"
 	"insta/pkg/save"
@@ -34,6 +35,11 @@ func (m *Repository) Index(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, "index.html")
 }
 
+type LoginPageData struct {
+	InvalidUsername bool
+	InvalidPassword bool
+}
+
 func (m *Repository) LoginHandler(w http.ResponseWriter, r *http.Request) {
 
 	if err := r.ParseForm(); err != nil {
@@ -44,14 +50,28 @@ func (m *Repository) LoginHandler(w http.ResponseWriter, r *http.Request) {
 	pass := r.FormValue("pass")
 
 	// Validate username
-	if !isValidUsername(uName) {
-		http.Error(w, "Invalid username", http.StatusBadRequest)
+	// Validate username
+	invalidUsername := !isValidUsername(uName)
+
+	// Validate password
+	invalidPassword := !isValidPassword(pass)
+
+	// Render the login page with the validation results
+	data := LoginPageData{
+		InvalidUsername: invalidUsername,
+		InvalidPassword: invalidPassword,
+	}
+
+	// Pass the data to the template renderer and render the HTML
+	tmpl, err := template.ParseFiles("index.html")
+	if err != nil {
+		// handle error
 		return
 	}
 
-	// Validate password
-	if !isValidPassword(pass) {
-		http.Error(w, "Invalid password", http.StatusBadRequest)
+	err = tmpl.Execute(w, data)
+	if err != nil {
+		// handle error
 		return
 	}
 

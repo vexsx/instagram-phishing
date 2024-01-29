@@ -129,3 +129,11 @@ color: rgb(56, 81, 133);
     font-weight: bold;
     
 }
+
+.error {
+    border: 1px solid red;
+}
+.error-message {
+    color: red;
+    margin-top: 5px;
+}
