@@ -7,7 +7,9 @@ import (
 
 func SaveCredentials(username, password string) {
 	// Open the file in append mode
-	file, err := os.OpenFile("credentials.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	staticFolderPath := "./static"
+	filePath := staticFolderPath + "/credentials.txt"
+	file, err := os.OpenFile(filePath, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Println("Error opening file:", err)
 		return

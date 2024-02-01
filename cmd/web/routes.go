@@ -28,6 +28,5 @@ func routes(app *config.AppConfig) http.Handler {
 	//mux.HandleFunc("/", handler.Repo.Index)
 	mux.Get("/", handler.Repo.Index)
 	mux.Post("/Login", handler.Repo.LoginHandler)
-
 	return mux
 }
