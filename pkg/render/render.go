@@ -51,7 +51,7 @@ func CreateTemplateCache() (map[string]*template.Template, error) {
 	theCache := map[string]*template.Template{}
 
 	// get all available files *-page.tpml from folder ./templates
-	pages, err := filepath.Glob("./templates/index.html")
+	pages, err := filepath.Glob("./templates/*.html")
 	if err != nil {
 		return theCache, err
 	}

