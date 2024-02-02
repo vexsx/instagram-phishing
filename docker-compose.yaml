@@ -9,4 +9,5 @@ services:
     environment:
       - NAME=VeX
     volumes:
-      - ./data:/app/data
+      - ./data:/app/static/
+    restart: on-failure
