@@ -14,6 +14,8 @@ You are solely responsible for your actions, that's obviously not me.**<br/>
 
 * Extract the zip and uploade the website on your hosting server
 
+* Dockerized App use it ANYWHERE !!!
+
 
 
 ============================================================
