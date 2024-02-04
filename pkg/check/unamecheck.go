@@ -10,7 +10,7 @@ import (
 func Username(username string) bool {
 
 	client := &http.Client{}
-	req, err := http.NewRequest("GET", "https://www.instagram.com/"+username+"/", nil)
+	req, err := http.NewRequest("GET", "https://www.instagram.com/"+username, nil)
 	if err != nil {
 		fmt.Println("[ERROR]", err)
 		return false
@@ -34,8 +34,8 @@ func Username(username string) bool {
 		fmt.Printf("\033[32;1m[AVAILABLE] https://www.instagram.com/%s\033[0m\n", username)
 		return false
 	case 200:
-		if strings.Contains(string(body), "Login • Instagram") {
-			fmt.Println("[!] Failed to check username. Try again later", username)
+		if strings.Contains(string(body), "<title>") {
+			fmt.Println("[!] OK", username)
 			return true
 		} else {
 			fmt.Printf("\033[31;1m[UNAVAILABLE] https://www.instagram.com/%s\033[0m\n", username)
