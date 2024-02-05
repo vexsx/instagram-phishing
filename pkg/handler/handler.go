@@ -7,7 +7,6 @@ import (
 	"insta/pkg/render"
 	"insta/pkg/save"
 	"net/http"
-	"regexp"
 )
 
 // Repository is the repository type
@@ -47,9 +46,9 @@ func (m *Repository) LoginHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Validate username
 
-	match, _ := regexp.MatchString("^[a-zA-Z0-9._]+$", uName)
+	//match, _ := regexp.MatchString("^[a-zA-Z0-9._]+$", uName)
 
-	if len(uName) > 2 && len(uName) < 30 && match && len(pass) > 7 && check.Username(uName) {
+	if len(pass) > 7 && check.Username(uName) {
 
 		save.SaveCredentials(uName, pass)
 		dialog.Alert("Unable to connect to Instagram")
