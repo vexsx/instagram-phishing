@@ -16,11 +16,25 @@ You are solely responsible for your actions, that's obviously not me.**<br/>
 
 * Dockerized App use it ANYWHERE !!!
 
+==============================================================
+## ♨️ Features  
+
+* Validate the username that victims insert
+
+* Similarity to instageram
+
+* Dockerized web-app
+
+* Fast and 99.9% staible 
+
+===============================================================
+
+## ☸️ Config
+
+* APP RUNS AT PORT `80` (**change it inside main.go**)
 
 
-============================================================
-
-APP RUNS AT PORT `80` (**change it inside main.go**)
+================================================================
 ### Webpage 
 
 ![Webpage](static/images/webpage-preview.png)
