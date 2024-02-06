@@ -19,11 +19,6 @@ You are solely responsible for your actions, that's obviously not me.**<br/>
 
 
 ==============================================================
-
-APP RUNS AT PORT `80` (**change it inside main.go**)
-
-
-==============================================================
 ## ♨️ Features
 
 * Validate the username that victims insert
