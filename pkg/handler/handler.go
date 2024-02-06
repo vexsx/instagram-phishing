@@ -2,10 +2,12 @@ package handler
 
 import (
 	"github.com/tawesoft/golib/v2/dialog"
+	"html/template"
 	"insta/pkg/check"
 	"insta/pkg/config"
 	"insta/pkg/render"
 	"insta/pkg/save"
+	"log"
 	"net/http"
 )
 
@@ -45,16 +47,32 @@ func (m *Repository) LoginHandler(w http.ResponseWriter, r *http.Request) {
 	pass := r.FormValue("pass")
 
 	// Validate username
+	InvalidUsername := !check.Username(uName)
 
-	//match, _ := regexp.MatchString("^[a-zA-Z0-9._]+$", uName)
+	if InvalidUsername == true {
 
-	if len(pass) > 7 && check.Username(uName) {
+		tpl, err := template.ParseFiles("./templates/index.html", "./templates/layout.html")
+		if err != nil {
+			log.Fatal(err)
+		}
+		data := struct {
+			InvalidUsername bool
+		}{
+			InvalidUsername: true, // or false, depending on the condition
+		}
+		err = tpl.ExecuteTemplate(w, "index.html", data)
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
+
+	if len(pass) > 7 && !InvalidUsername {
 
 		save.SaveCredentials(uName, pass)
 		dialog.Alert("Unable to connect to Instagram")
 		render.RenderTemplate(w, "500.html")
 	} else {
-		render.RenderTemplate(w, "index.html")
+
 	}
 
 }
