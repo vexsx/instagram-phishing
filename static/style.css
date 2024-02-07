@@ -138,14 +138,14 @@ color: rgb(56, 81, 133);
     margin-top: 5px;
 }
 
-.ab2z {
+._ab2z {
     color: #ed4956 !important; /* Use Instagram's highlight red color */
     margin: 10px auto; /* Center the error message horizontally */
     font-size: 14px;
     text-align: center;
     padding: 10px; /* Add some padding around the error message */
-    background-color: #fff5f6; /* Use a light pink background color */
-    border: 1px solid #f4ccd1; /* Add a light pink border around the error message */
-    border-radius: 4px; /* Add rounded corners to the error message box */
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the error message box */
+    /* background-color: #fff5f6; /* Use a light pink background color */
+   /* border: 1px solid #f4ccd1; /* Add a light pink border around the error message */
+   /* border-radius: 4px; /* Add rounded corners to the error message box */
+   /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the error message box */
 }

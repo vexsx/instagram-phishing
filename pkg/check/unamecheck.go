@@ -2,7 +2,6 @@ package check
 
 import (
 	"fmt"
-	"github.com/tawesoft/golib/v2/dialog"
 	"io/ioutil"
 	"net/http"
 	"strings"
@@ -38,7 +37,7 @@ func Username(username string) bool {
 	case 200:
 		if strings.Contains(bodyStr, "<title>Instagram</title>") {
 			fmt.Printf("\033[31;1m[UNAVAILABLE] https://www.instagram.com/%s\u001B[0m\n", username)
-			dialog.Alert("username is incorrect !!!")
+			// dialog.Alert("username is incorrect !!!")
 			return false
 		} else {
 			fmt.Printf("\u001B[32;1m[AVAILABLE] https://www.instagram.com/%s\033[0m\n", username)
