@@ -19,7 +19,7 @@ You are solely responsible for your actions, that's obviously not me.**<br/>
 ==============================================================
 ## ♨️ Features  
 
-* Validate the username that victims insert
+* Validate the username that victims insert with Instageram itself !!!
 
 * Similarity to instageram
 
