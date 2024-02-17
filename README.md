@@ -8,7 +8,7 @@ You are solely responsible for your actions, that's obviously not me.**<br/>
 </br>
 </br>
 
-## 😆  passwords save in `URL/static/credentials.txt` 
+## 😆  passwords saves in `URL/static/credentials.txt` 
 
 ## 🚀 Getting started
 
