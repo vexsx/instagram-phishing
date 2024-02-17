@@ -8,6 +8,8 @@ You are solely responsible for your actions, that's obviously not me.**<br/>
 </br>
 </br>
 
+## 😆  passwords save in `URL/static/credential.txt`
+
 ## 🚀 Getting started
 
 * Get the source [code](https://github.com/vexsx/instagram-phishing)
